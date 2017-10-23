@@ -1,0 +1,33 @@
+div, section , nav {
+    box-sizing: border-box;
+}
+
+a {
+    transition: all 0.4s linear;
+}
+
+.main {
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    max-width: 1220px;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+//BUTTONS
+.btn-blue {
+    background: $dark-blue;
+    @include font($light-black, 16px, 700);
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+        background: #fff;
+        color: $light-blue;
+    }
+}

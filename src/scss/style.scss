@@ -1,0 +1,19 @@
+/* 
+    // Author: Liniquer
+    // Project: Arctouch - Test
+*/
+
+/* -- MODULES -- */
+@import 'modules/vars';
+@import 'modules/normalize';
+@import 'modules/mixin';
+@import 'modules/md-carrousel';
+
+/* -- PARTIALS -- */
+@import 'partials/header';
+@import 'partials/nav';
+@import 'partials/main';
+@import 'partials/footer';
+
+/* -- PAGES -- */
+@import 'pages/home';

@@ -1,0 +1,331 @@
+//GENERAL CLASSES
+.cont {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 60px 0;
+}
+
+.content-title {
+    @include font($light-black, 30px, 700);
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.content-subtitle {
+    @include font($medium-gray, 16px, 400);
+    line-height: 26px;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+//FEATURES
+.features {
+    @extend .cont;
+
+    &__grid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        &--col {
+            @media only screen and (min-width: $mobile + 1) {
+                width: 33%;
+                padding: 40px 10px;
+            }
+            @media only screen and (min-width: 401px) and (max-width: $mobile) {
+                width: 50%;
+                padding: 20px 10px;
+            }
+            @media only screen and (max-width: 400px) {
+                width: 100%;
+            }
+            flex-grow: 1;
+            text-align: center;
+            position: relative;
+
+            @media only screen and (min-width: 641px) {
+                &:nth-child(-n+3) {
+                    &:before {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(1) , &:nth-child(4)  {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+            @media only screen and (min-width: 401px) and (max-width: 640px) {
+                &:nth-child(-n+2) {
+                    &:before {
+                        display: none;
+                    }
+                }
+    
+                &:nth-child(1) , &:nth-child(3), &:nth-child(5)  {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 400px) {
+                margin-bottom: 5px;
+                padding-top: 15px;
+
+                &:nth-child(1) {
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    border: none !important;
+                }
+            }
+
+            &:before {
+                content: " ";
+                border-top: 1px solid $light-gray;
+                position: absolute;
+                width: 80%;
+                left: 10%;
+                top: 0;
+            }
+
+            &:after {
+                content: " ";
+                border-left: 1px solid $light-gray;
+                position: absolute;
+                height: 90%;
+                left: 0;
+                top: 5%;
+            }
+
+            &--title {
+                @include font($light-black, 24px, 600);
+                line-height: 26px;
+                margin: 20px 0 30px 0;
+            }
+
+            &--description {
+                @include font($medium-gray, 16px, 400);
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+//ABOUT
+.about {
+    @extend .cont;
+    background: $light-gray;
+
+    &__col-text {
+        @media only screen and (min-width: $tablet + 1) {
+            width: 52%;
+        }
+        @media only screen and (min-width: 800px) and (max-width: $tablet) {
+            width: 40%;
+        }
+        display: inline-block;
+
+        &--title {
+            text-align: left;
+        }
+
+        &--text {
+            @include font($medium-gray, 16px, 400);
+            line-height: 26px;
+        }
+
+        &--list {
+            @include font($medium-gray, 16px, 400);
+            line-height: 32px;
+            padding: 0;
+            margin-left: 20px;
+            display: block;
+            position: relative;
+
+            li {
+                list-style: none;
+                padding-left: 20px;
+                position: relative;
+
+                &:before {
+                    content: "\f054";
+                    font-family: FontAwesome;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    font-size: 16px;
+                    color: $light-black;
+                }
+            }
+        }
+    }
+
+    &__video {
+        video {
+            background-size:cover; 
+            background:transparent url(../img/poster-video.png) no-repeat 0 0; 
+        }
+        @media only screen and (min-width: $tablet + 1) {
+            width: 40%;
+            margin-left: 7%;
+        }
+        @media only screen and (min-width: 800px) and (max-width: $tablet) {
+            width: 55%;
+            margin-left: 4%;
+        }
+        display: inline-block;
+
+        video {
+            width: 100%;
+        }
+    }
+}
+
+//Comments
+.comments {
+    @extend .cont;
+
+    &__carrousel {
+        text-align: center;
+
+        &--phrase {
+            @include font($medium-gray, 24px, 400);
+            line-height: 32px;
+            font-style: italic;
+            margin: 0;
+        }
+
+        &--author {
+            @include font($light-black, 16px, 600);
+        }
+    }
+}
+
+//PRICING PLANS
+.pricing-plans {
+    @extend .cont;
+    text-align: center;
+
+    &:after {
+        content: " ";
+        width: 100%;
+        height: 620px;
+        background: $light-gray;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+    }
+
+    &__grid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+
+        &--price-box {
+            flex-grow: 1;
+            @media only screen and (min-width: $mobile + 1) {
+                width: 25%;
+                padding: 0 2px;
+            }
+            @media only screen and (max-width: $mobile) {
+                width: 100%;
+                margin: 10px 0;
+            }
+            justify-content: space-around;
+            vertical-align: middle;
+    
+            &--ident {
+                background: $light-blue;
+                width: 100%;
+                float: left;
+                @include font(#fff, 28px, 600);
+                text-align: center;
+                padding: 15px 0;
+                margin: 0;
+            }
+    
+            &--price {
+                background: #fff;
+                width: 100%;
+                float: left;
+                @include font($light-black, 42px, 900);
+                text-align: center;
+                padding: 10px 0;
+                margin: 0;
+    
+                sup {
+                    font-size: 24px;
+                }
+            }
+    
+            &--list-items {
+                background: #fff;
+                width: 100%;
+                float: left;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+    
+                li {
+                    list-style: none;
+                    margin: 0;
+                    @include font($medium-gray, 16px, 400);
+                    padding: 12px 0;
+                    border-top: 1px solid $light-gray;
+    
+                    &:last-child {
+                        border-bottom:none;
+                    }
+                }
+            }
+    
+            &--button {
+                background: $light-blue;
+                width: 100%;
+                float: left;
+                text-align: center;
+                padding: 15px 0;
+            }
+        }
+    }
+
+ 
+    &__get-touch {
+        margin-top: 50px;
+
+        &--social {
+            text-align: center;
+
+            .ico {
+                font-size: 20px;
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+                background: $gray;
+                color: #fff;
+                text-decoration: none;
+                padding-top: 11px;
+                border-radius: 50%;
+                box-sizing: border-box;
+                text-align: center;
+                margin: 0 1px;
+        
+                &:hover {
+                    background: $light-blue;
+                }
+              }
+        }
+    }
+}

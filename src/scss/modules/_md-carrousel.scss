@@ -1,0 +1,38 @@
+/* -- Carrousel - Made by Liniquer Fractucello
+    to: Arctouch
+-- */
+
+.md-carrousel {
+    width: 100%;
+    position: relative;
+
+    &--nav {
+        width: 100%;
+        text-align: center;
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                border: 2px solid $light-blue;
+                cursor: pointer;
+                margin: 5px 3px;
+
+                &:hover {
+                    transition: all 0.3s linear;
+                    border-color: $medium-gray;
+                    background: $medium-gray;
+                    transform: scale(1.3);
+                }
+            }
+
+            .active {
+                background: $light-blue;
+            }
+        }
+    }
+}
